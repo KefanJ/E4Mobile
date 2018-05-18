@@ -18,7 +18,7 @@
                    
                    
                    
-                    <input type='hidden' name='idPie id='idPie' value='<?php echo $_SESSION['piece'];?>' />
+                    <input type='hidden' name='idPie' id='idPie'value=''<?php echo $_SESSION['piece'];?> />
                 </div>
             <button type="submit" value="Save"  >Sauvegarder le comédien</button>
         </form>
