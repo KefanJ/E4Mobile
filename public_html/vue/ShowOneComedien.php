@@ -4,7 +4,7 @@
 	echo "<a rel=\"external\" href=\"javascript:deleteEntryC($idC)\">Supprimer cette saisie</a>";
 	echo "<input type='hidden' name='action' value='updateC'/>";
 	echo "<input type='hidden' name='idC' value='".$contact->getIdC()."'/>";
-        var_dump($contact);
+     
 	echo "<fieldset>";
 	echo "<div data-role='fieldcontain'>";
 	echo "<label for='nomC'>Nom</label>";
@@ -18,10 +18,8 @@
 	echo "<label for='naissanceC'>Date de naissance</label>";
 	echo "<input type='date' name='naissanceC' maxlength='200' id='naissanceC' value='".$contact->getNaissanceC()."' />";
 	echo "</div>";
-        echo "<div data-role='fieldcontain'>";
-	echo "<label for='ageC'>Age</label>";
-	echo "<input type='text' name='ageC' maxlength='200' id='ageC' value='".$contact->getAgeC()."' />";
-	echo "</div>";
+        
+	
          echo "<div data-role='fieldcontain'>";
 	echo "<label for='nationaliteC'>Nationalite</label>";
 	echo "<input type='text' name='nationaliteC' maxlength='200' id='nationaliteC' value='".$contact->getNationaliteC()."' />";

@@ -12,7 +12,7 @@
         <form method='post' rel='external' action='index.php' onsubmit=''>
             <input type='hidden' name='action' value='choix2'/>
                     
-                <h4>Liste des Pieces: </h4>
+                <h4>Information des Pieces: </h4>
                     
                 <input type="submit" value="Entrer"  >
         </form>

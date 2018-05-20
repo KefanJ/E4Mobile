@@ -9,21 +9,19 @@
                
 
                 <div class='ui-field-contain'>
-                    <label for='adresseT'>Adresse</label>
-                    <input type='text' name='adresseT' id='dateP' value='' />
+                    <label for='rueT'>Rue</label>
+                    <input type='text' name='rueT' id='rueT' value='' />
                 </div>
 
                 <div class='ui-field-contain'>
-                    <label for='idP'>Nom pièce</label>
-                    <input type='text' name='idP' maxlength='200' id='realisateurP' value='' />
+                    <label for='villeT'>Ville</label>
+                    <input type='text' name='villeT' id='villeT' value='' />
                 </div>
-             
                 
                 <div class='ui-field-contain'>
-                    <label for='dateT'>Date de la pièce</label>
-                    <input type='date' name='dateT' maxlength='200' id='dateT' value='' />
+                    <label for='codePT'>Code postal</label>
+                    <input type='number' name='codePT' id='codePT' value='' />
                 </div>
-                
                 
             <fieldset>
             <button type="submit" value="Save" >Sauvegarder le theatre</button>

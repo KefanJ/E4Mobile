@@ -11,8 +11,8 @@
             </div>
            
              <div class='ui-field-contain'>
-                <label for='ageC'>Age: </label>
-                <?php echo $info->getAgeC(); ?>
+                <label for='age'>Age: </label>
+                <?php echo $info->getAge(); ?>
             </div> 
              
              <div class='ui-field-contain'>

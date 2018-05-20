@@ -18,10 +18,7 @@
                     <label for='naissanceC'>Date de naissance:</label>
                     <input type='date' name='naissanceC' maxlength='200' id='naissanceC' value='' />
                 </div>
-                 <div class='ui-field-contain'>
-                    <label for='ageC'>Age:</label>
-                    <input type='number' name='ageC' maxlength='200' id='ageC' value='' />
-                </div>
+                
                 
                 <div class='ui-field-contain'>
                     <label for='nationaliteC'>Nationalite:</label>

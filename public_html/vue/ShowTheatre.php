@@ -6,31 +6,29 @@
     <ul data-role="listview" class="ui-listview-outer"> 
     <?php foreach($contacts as $info){ ?>
         <div data-role="collapsible" >
-             <h2><?php echo $info->getNomP(); ?></h2>
+             <h2><?php echo $info->getNomT(); ?></h2>
+             
 
             <div class='ui-field-contain'>
-                <label for='adresse'>Adresse </label>
-                <?php echo $info->getAdresseT(); ?> 
+                <label for='rueT'>Rue </label>
+                <?php echo $info->getRueT(); ?> 
             </div>
             <div class='ui-field-contain'>
-                <label for='piece'>Piece </label>
-                <?php echo $info->getIdTP();  ?>
+                <label for='villeT'>Ville </label>
+                <?php echo $info->getVilleT();  ?>
             </div>
             <div class='ui-field-contain'>
-                <label for='dateT'>Date de la pièce: </label>
-                <?php echo $info->getDateT(); ?>
+                <label for='codePT'>Code postal: </label>
+                <?php echo $info->getCodePT(); ?>
             </div>
              
             <?php $_SESSION['theatre']=$info->getIdT();?>     
              
-             <?php var_dump($_SESSION)['theatre'] ?>
+             
 
              <a class="modPrescL" data-rel="dialog" data-transition="pop"  href="index.php?action=detailsT&idT=
-             <?php echo $info->getIdP();?>">Modifier la piece "  <?php echo $info->getNomP(); ?>" </a>
-             <br>
-             <a class="modPrescL" data-rel="dialog" data-transition="pop"  href="index.php?action=detailsTP&idT=
-             <?php echo $info->getIdP();?>">Liste des pieces "  <?php echo $info->getNomP(); ?>" </a>
-             </div>
+             <?php echo $info->getIdT();?>">Modifier le Theatre "  <?php echo $info->getNomT(); ?>" </a>
+            
     <?php }?>
         
     </ul>

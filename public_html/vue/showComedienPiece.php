@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 <?php
 // Tout début du code PHP. Situé en haut de la page web
 ini_set("display_errors",0);error_reporting(0);
@@ -9,19 +9,20 @@ ini_set("display_errors",0);error_reporting(0);
     <?php foreach($contacts as $info){ ?>
         <div data-role="collapsible" >
              <h2>   
-                <?php $oneComedien = Passerelle::getOneActeur($info->getIdCom());
+                <?php $oneComedien = Passerelle::getOneComedien($info->getIdCom());
+
                        echo $oneComedien->getNomC();
                        echo ' ';
                        echo $oneComedien->getPrenomC();
+                      
                  ?>
         </div>
-        <?php               $idC=$info->getIdCP();
-        $idC=$idC+0;
+        
+        <?php               $idCom=$info->getIdCP();
+                             $idCom=$idCom+0;
         ?>
-           <?php  echo "<a rel=\"external\" href=\"javascript:deleteEntryCP($idC)\">Supprimer cette saisie</a>";
-           ?>
+           <?php  echo "<a rel=\"external\" href=\"javascript:deleteEntryCP($idCom)\">Supprimer cette saisie</a>";        var_dump($idCom)?>
              
-    <?php }?>
+ <?php }?>
     </ul>
-   <?php var_dump($_SESSION['piece']=$piece->getIdP()); ?>
-<?php       var_dump($idC)?>
+   

@@ -20,10 +20,9 @@
                 <label for='realisateurP'>Réalisateur: </label>
                 <?php echo $info->getRealisateurP(); ?>
             </div>
+               
              
-            <?php $_SESSION['piece']=$info->getIdP();?>     
-             
-             <?php var_dump($_SESSION)['piece'] ?>
+             <?php $_SESSION ['piece'] = $info->getIdP(); ?>
 
              <a class="modPrescL" data-rel="dialog" data-transition="pop"  href="index.php?action=detailsP&idP=
              <?php echo $info->getIdP();?>">Modifier la piece "  <?php echo $info->getNomP(); ?>" </a>

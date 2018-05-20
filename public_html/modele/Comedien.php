@@ -4,16 +4,15 @@ class Comedien{
 	private $nomC;
         private $prenomC;
         private $naissanceC;
-        private $ageC;
+     
 	private $nationaliteC;
         
                 
-	function __construct($idC,$nomC,$prenomC,$naissanceC,$ageC,$nationaliteC){
+	function __construct($idC,$nomC,$prenomC,$naissanceC,$nationaliteC){
 		$this->idC = $idC;
 		$this->nomC = $nomC;
                 $this->prenomC = $prenomC;  
                 $this->naissanceC = $naissanceC; 
-                $this->ageC= $ageC;
                 $this->nationaliteC = $nationaliteC;
                
               
@@ -35,13 +34,23 @@ class Comedien{
 		return $this->naissanceC;
 	}
         
-	 public function getAgeC(){
-		return $this->ageC;
-	}
+	 
         
         public function getNationaliteC(){
 		return $this->nationaliteC;
 	}
-      
+          
+        public function getDate()
+                {
+                 return date("Y-m-d");
+                }
+
+        
+
+        public function  getAge(){
+            $age= date("Y-m-d");
+           $a=date_diff(date_create($age), date_create($this-> getNaissanceC()))->y;
+            return $a;
+        }
 }
 ?>

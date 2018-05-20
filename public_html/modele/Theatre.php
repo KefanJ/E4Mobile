@@ -2,18 +2,18 @@
 class Theatre{
 	private $idT;
 	private $nomT;
-        private $adresseT;
-        private $idTP;
-        private $dateT;
+        private $rueT;
+        private $villeT;
+        private $codePT;
 	
         
                 
-	function __construct($idT,$nomT,$adresseT,$idTP,$dateT){
+	function __construct($idT,$nomT,$rueT,$villeT,$codePT){
 		$this->idT = $idT;
 		$this->nomT = $nomT;
-                $this->adresseT = $adresseT;  
-                $this->idTP = $idTP; 
-                $this->dateT= $dateT;
+                $this->rueT = $rueT;  
+                $this->villeT = $villeT; 
+                $this->codePT= $codePT;
                
               
 	}
@@ -26,16 +26,16 @@ class Theatre{
 		return $this->nomT;
 	}
         
-        public function getAdresseT(){
-		return $this->prenomC;
+        public function getRueT(){
+		return $this->rueT;
 	}
         
-	 public function getIdTP(){
-		return $this->idTP;
+	 public function getVilleT(){
+		return $this->villeT;
 	}
         
-	 public function getDateT(){
-		return $this->dateT;
+	 public function getCodePT(){
+		return $this->codePT;
 	}
         
       
