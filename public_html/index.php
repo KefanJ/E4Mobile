@@ -5,13 +5,14 @@ require('modele/Piece.php');
 require ('modele/ComedienPiece.php');
 require('modele/Passerelle.php');
 require ('modele/Theatre.php');
+require ('modele/TheatrePiece.php');
 require('vue/header.php');
 
 ?>
 <div data-role="page">
-    <div data-role="header" data-theme="b">
-        <h1>Theatre</h1>
-         <a href="http://localhost/E4Mobile/public_html/index.php" data-theme="a" data-icon="home" data-ajax='false'>Home</a>
+    <div data-role="header" data-theme="e">
+        <h1>Sunny Art</h1>
+         <a href="http://localhost/E4Mobile/public_html/index.php" data-theme="b" data-icon="home" data-ajax='false'>Home</a>
     </div>
     <div data-role="content">
     <?php 
@@ -65,13 +66,19 @@ require('vue/header.php');
                                     
                                     break;             
                                     
-                    case 'addT'      : 
+            case 'addT'      : 
                 
                                     $theatre = Passerelle::getLesTheatres();
                                     require ('vue/addTheatre.php');
                                     
                                     break;                       
+                                   
+            case 'addTP'      : 
+                
+                                    $piece = Passerelle::getPiece();
+                                    require ('vue/addTheatrePiece.php');
                                     
+                                    break;
            
             case 'insertC' 	:   
                                     $nomC = $_REQUEST['nomC'];
@@ -119,7 +126,16 @@ require('vue/header.php');
                                     require ('vue/showComedienPiece.php');
                                     break;
             
-                                
+             case 'insertTP'     :  
+                                    $idThe = $_REQUEST['idThe'] ;
+                                    $idPiece = $_REQUEST['idCom'];
+                                    $piece = Passerelle::getPiece();
+                                    $idP = $_REQUEST['idP'];
+                                    $contact = Passerelle::getOnePiece($idP);
+                                    Passerelle::addTheatrePiece($idThe,$idPiece);
+                                    
+                                    require ('vue/showTheatrePiece.php');
+                                    break;                    
                                 
                                 
             case 'detailsC' 	:   $idC = $_REQUEST['idC'];
@@ -137,15 +153,21 @@ require('vue/header.php');
                                     $idP = $_REQUEST['idP'];
                                     $contacts = Passerelle::getLesComedienPiece($idP);
                                     $comedien = Passerelle::getOnePiece($idP);
-                                    require('vue/showComedienPiece.php');      
+                                    require('vue/showComedienPiece.php');       
                                     break;  
                                 
             case 'detailsT' 	:   $idT= $_REQUEST['idT'];
-                                    $contacts = Passerelle::getLesTheatres($idT);
                                     $theatre =  Passerelle::getOneTheatre($idT);
                                     require('vue/showOneTheatre.php'); 
                                     break;                      
-                                
+            
+                                                     
+            case 'detailsTP' 	:   
+                                    $idPiece = $_REQUEST['idPiece'];
+                                    $contacts = Passerelle::getLesTheatresPiece($idPiece);
+                                    $theatre = Passerelle::getOnePiece($idPiece);
+                                    require('vue/showTheatrePiece.php');      
+                                    break; 
             
              case 'updateC' 	:   $idC = $_REQUEST['idC'];
                                     $nomC = $_REQUEST['nomC'];
@@ -175,8 +197,8 @@ require('vue/header.php');
                                     $rueT = $_REQUEST['rueT'];
                                     $villeT = $_REQUEST['villeT'];
                                     $codePT = $_REQUEST['codePT'];
-                                    Passerelle::updateTheatre($nomT,$rueT,$villeT,$codePT); 
-                                    $contacts = Passerelle::getTheatre();
+                                    Passerelle::updateTheatre($idT,$nomT,$rueT,$villeT,$codePT); 
+                                    $contacts = Passerelle::getLesTheatres();
                                     require ('vue/ShowTheatre.php');
                                     break;                     
                                 
@@ -201,6 +223,13 @@ require('vue/header.php');
             case 'deleteT'	:   
                                     $idT = $_REQUEST['idT'];
                                     Passerelle::deleteTheatre($idT);  
+                                    break;
+                                
+                                
+               case 'deleteTP'	:   
+                                    $idPiece  = $_REQUEST['idPiece'];
+                                    Passerelle::deleteTheatrePiece($idPiece); 
+                                    require ('vue/showTheatrePiece.php');
                                     break;                    
                               
             default             :   

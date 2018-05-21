@@ -10,15 +10,15 @@
              
 
             <div class='ui-field-contain'>
-                <label for='rueT'>Rue </label>
+                <label for='rueT'>Rue : </label>
                 <?php echo $info->getRueT(); ?> 
             </div>
             <div class='ui-field-contain'>
-                <label for='villeT'>Ville </label>
+                <label for='villeT'>Ville : </label>
                 <?php echo $info->getVilleT();  ?>
             </div>
             <div class='ui-field-contain'>
-                <label for='codePT'>Code postal: </label>
+                <label for='codePT'>Code postal : </label>
                 <?php echo $info->getCodePT(); ?>
             </div>
              
@@ -28,7 +28,12 @@
 
              <a class="modPrescL" data-rel="dialog" data-transition="pop"  href="index.php?action=detailsT&idT=
              <?php echo $info->getIdT();?>">Modifier le Theatre "  <?php echo $info->getNomT(); ?>" </a>
-            
+             <br>
+             <a class="modPrescL" data-rel="dialog" data-transition="pop"  href="index.php?action=detailsTP&idPiece=
+             <?php echo $info->getIdT();?>">Liste des pièce au théatre "  <?php echo $info->getNomT(); ?>" </a>
+             </div>
+             
+             
     <?php }?>
         
     </ul>

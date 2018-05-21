@@ -45,7 +45,19 @@ function checkFormP() {
 	return true;
 }
 
-
+ function checkFormTP() {
+	try {
+		if ($.trim($('#idPiece').val()) == "" ) {
+				alert("Tous les champs sont obligatoire");
+				return false;
+			}
+	} catch (e) {
+        
+		alert(e);
+		return false;
+	}
+	return true;
+}
 
 
 
@@ -108,17 +120,26 @@ function deleteEntryCP(idCom) {
 	}
 	return true;
 
-
-
-
-
-
 }
 function deleteEntryT(idT) {
 	try {
 		var confirmString = "Supression d'un theatre.  Confirmez-vous ?\n";
 		if (window.confirm(confirmString)) {
 			window.location="index.php?action=deleteT&idT=" + idT;
+		}
+	} catch (e) {
+		alert(e);
+		return false;
+	}
+	return true;
+
+}
+
+function deleteEntryTP(idPiece) {
+	try {
+		var confirmString = "Supression d'une piece.  Confirmez-vous ?\n";
+		if (window.confirm(confirmString)) {
+			window.location="index.php?action=deleteTP&idPiece=" + idPiece;
 		}
 	} catch (e) {
 		alert(e);

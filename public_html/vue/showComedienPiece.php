@@ -1,4 +1,4 @@
-
+<?php session_start();?>
 <?php
 // Tout début du code PHP. Situé en haut de la page web
 ini_set("display_errors",0);error_reporting(0);
@@ -21,8 +21,11 @@ ini_set("display_errors",0);error_reporting(0);
         <?php               $idCom=$info->getIdCP();
                              $idCom=$idCom+0;
         ?>
-           <?php  echo "<a rel=\"external\" href=\"javascript:deleteEntryCP($idCom)\">Supprimer cette saisie</a>";        var_dump($idCom)?>
-             
+        
+       
+           <?php  echo "<a rel=\"external\" href=\"javascript:deleteEntryCP($idCom)\">Supprimer cette saisie</a>";     ?>
+         <?php echo $_SESSION['comedien'] = $comedien->getIdP();?>
+            
  <?php }?>
     </ul>
    

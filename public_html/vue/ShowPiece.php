@@ -8,16 +8,13 @@
         <div data-role="collapsible" >
              <h2><?php echo $info->getNomP(); ?></h2>
 
-            <div class='ui-field-contain'>
-                <label for='Comediens'>Comediens: </label>
-                <?php ?> 
-            </div>
+            
             <div class='ui-field-contain'>
                 <label for='dateP'>Date de Sortie: </label>
                 <?php echo $info->getDateP();  ?>
             </div>
             <div class='ui-field-contain'>
-                <label for='realisateurP'>Réalisateur: </label>
+                <label for='realisateurP'>Metteur en scène: </label>
                 <?php echo $info->getRealisateurP(); ?>
             </div>
                

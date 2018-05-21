@@ -13,8 +13,9 @@
                                  }?>
                     </select>
                 <div class='ui-field-contain'>
-                       <input type='hidden' name='idPie' id='idPie' value='<?php echo $_SESSION['piece'];?>' />
-                    <?php var_dump($_SESSION['piece'])?>
+                       <input type='hidden' name='idPie' id='idPie' value='<?php echo $_SESSION['comedien'];?>' />
+                   
+                         
                 </div>
             <button type="submit" value="Save"  >Sauvegarder le comédien</button>
         </form>

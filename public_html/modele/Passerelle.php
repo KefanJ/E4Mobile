@@ -47,6 +47,19 @@ class Passerelle {
             return "ERREUR";
         }
     }
+    
+    
+    static function addTheatrePiece($idThe, $idPiece) {
+        $sql = "INSERT INTO `theatrepiece` (`tp_id`, `id_t`, `id_p`) VALUES  (NULL,'$idThe','$idPiece')";
+        $result = Passerelle::$mysql_link->exec($sql);
+        if ($result == 1) {
+            return "SUCCESS";
+        } else {
+            return "ERREUR";
+        }
+        
+    }
+    
 
     static function getOneComedien($idC) {
         $comedien = null;
@@ -132,13 +145,16 @@ class Passerelle {
 
         return $piece;
     }
+    
+  
 
     static function getLesComedienPiece($idP) {
 
         $comedienPiece = array();
 
-        $sql = "SELECT * FROM comedienpiece WHERE id_p= " . $idP;
-
+        $sql = "SELECT * FROM comedienpiece WHERE id_p=".$idP;
+       
+       
         $result = Passerelle::$mysql_link->query($sql);
 //                    var_dump($result);
         if ($result->rowCount() > 0) {
@@ -148,40 +164,18 @@ class Passerelle {
                 $idCP = $row['cp_id'];
                 $idCom = $row['id_c'];
                 $idPie = $row['id_p'];
-
-                //                            var_dump($idact);
+                                         
                 $comedienPiece = new ComedienPiece($idCP, $idCom, $idPie);
                 $comedienPieces[] = $comedienPiece;
             }
 
             return $comedienPieces;
         } else {
-            echo '<script>alert("aucun acteur");</script>';
+         
         }
     }
 
-//    static function getLesComedienPiece2($idCP) {
-//
-//        $comedienPiece = array();
-//
-//        $sql = "SELECT * FROM comedienpiece WHERE cp_id= " . $idCP;
-//
-//        $result = Passerelle::$mysql_link->query($sql);
-////                    var_dump($sql);
-//        while ($row = $result->fetch()) {
-//
-//            $idCP = $row['cp_id'];
-//            $idPie = $row['id_p'];
-//            $idCom = $row['id_c'];
-//            $nomC = $row['c_nom'];
-//            $prenomC = $row['c_prenom'];
-//            var_dump($nomC);
-//            $comedienPiece = new ComedienPiece($idCP, $idPie, $idCom, $nomC, $prenomC);
-//            $comedienPieces[] = $comedienPiece;
-//        }
 
-//        return $comedienPieces;
-//    }
 
     static function getLesTheatres() {
         $theatre = array();
@@ -192,9 +186,9 @@ class Passerelle {
             $nomT = $row['t_nom'];
             $rueT = $row['t_rue'];
             $villeT = $row ['t_ville'];
-            $codeT = $row ['t_codeP'];
+            $codePT = $row ['t_codeP'];
 
-            $theatre = new Theatre($idT, $nomT, $rueT, $villeT, $codeT);
+            $theatre = new Theatre($idT, $nomT, $rueT, $villeT, $codePT);
 
             $theatres[] = $theatre;
         }
@@ -216,20 +210,44 @@ class Passerelle {
                 $rueT = $row['t_rue'];
                 $villeT = $row ['t_ville'];
                 $codePT = $row ['t_codeP'];
-
-
                 $theatre = new Theatre($idT, $nomT, $rueT, $villeT, $codePT);
+                
             }
         } 
-        else {
-            echo '<script>alert("aucun theatre");</script>';
-        }
+        
         return $theatre;
     }
+     static function getLesTheatresPiece($idP) {
+
+        $theatrePiece = array();
+
+        $sql = "SELECT * FROM theatrepiece WHERE id_t= " . $idP;
+
+        $result = Passerelle::$mysql_link->query($sql);
+//                    var_dump($result);
+        if ($result->rowCount() > 0) {
+
+            while ($row = $result->fetch()) {
+
+                $idTP = $row['tp_id'];
+                $idThe = $row['id_t'];
+                $idPiece = $row['id_p'];
+                        
+                
+                $theatrePiece = new TheatrePiece($idTP, $idThe, $idPiece);
+                $theatrePieces[] = $theatrePiece;
+            }
+
+            return $theatrePieces;
+        } else {
+            echo '<script>alert("aucun comédien");</script>';
+        }
+    }
+
 
     static function updateTheatre($idT, $nomT, $rueT, $villeT, $codePT) {
         $sql = "UPDATE `theatre` SET  `t_nom`='" . $nomT . "', `t_rue` ='$rueT',t_ville='$villeT'"
-                . ",t_code ='$codePT'  WHERE t_id=" . $idT;
+                . ",t_codeP ='$codePT'  WHERE t_id=" . $idT;
 
         $result = Passerelle::$mysql_link->exec($sql);
     }
@@ -269,6 +287,12 @@ class Passerelle {
         $result = Passerelle::$mysql_link->exec($sql);
     }
 
+    
+     static function deleteTheatrePiece($idTP) {
+        $sql = "DELETE FROM `theatrepiece` WHERE tp_id=" . $idTP;
+
+        $result = Passerelle::$mysql_link->exec($sql);
+    }
 }
 ?>
 
