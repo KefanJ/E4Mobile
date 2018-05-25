@@ -17,10 +17,11 @@
 	echo "<input type='date' name='dateP' maxlength='200' id='dateP' value='".$contact->getDateP()."' />";
 	echo "</div>";
         
-         echo "<div data-role='fieldcontain'>";
-	echo "<label for='realisateurP'>Réalisateur</label>";
+        echo "<div data-role='fieldcontain'>";
+	echo "<label for='realisateurP'>Metteur en scène</label>";
 	echo "<input type='text' name='realisateurP' maxlength='200' id='realisateurP' value='".$contact->getRealisateurP()."' />";
 	echo "</div>";
+        
         
 	echo "<fieldset>";
 	echo "<button type=\"submit\" value=\"Save\">Sauvegarder</button>";	

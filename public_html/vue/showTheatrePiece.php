@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 <?php
 // Tout début du code PHP. Situé en haut de la page web
 ini_set("display_errors",0);error_reporting(0);
@@ -21,11 +21,14 @@ ini_set("display_errors",0);error_reporting(0);
                  ?>
         </div>
         
-        <?php               $idPiece=$info->getIdTP();
-                             $idPiece=$idPiece+0;
+        <?php               var_dump($idPiece=$info->getIdTP());
+                             
         ?>
            <?php  echo "<a rel=\"external\" href=\"javascript:deleteEntryTP($idPiece)\">Supprimer cette saisie</a>";                  ?>
              
  <?php }?>
     </ul>
+ <?php $_SESSION['theatre']=$theatre->getIdP();
+ var_dump($theatre->getIdP());
+            ?>   
    

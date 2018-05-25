@@ -20,12 +20,15 @@ ini_set("display_errors",0);error_reporting(0);
         
         <?php               $idCom=$info->getIdCP();
                              $idCom=$idCom+0;
+                             
+                             var_dump($idCom=$info->getIdCP());
         ?>
         
        
            <?php  echo "<a rel=\"external\" href=\"javascript:deleteEntryCP($idCom)\">Supprimer cette saisie</a>";     ?>
          <?php echo $_SESSION['comedien'] = $comedien->getIdP();?>
             
+       <?php var_dump($_SESSION['comedien']);?>
  <?php }?>
     </ul>
-   
+    

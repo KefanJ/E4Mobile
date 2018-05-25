@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php
+  session_start(); ?>
+
 <form method='post' rel='external' >
 
       <input type='hidden' name='action' value='insertTP'/>
@@ -13,14 +15,20 @@
                                  }?>
                     </select>
                 <div class='ui-field-contain'>
-                       <input type='hidden' name='idThe' id='idThe' value='<?php echo $_SESSION['theatre'];?>' />
+                       <input type='hidden' name='idThe' id='idThe' value='<?php echo $_SESSION['theatre'] ;?>' />
                            
-                                               
+                            <?php $_SESSION['theatre'];?>                   
 
                 </div>
             <button type="submit" value="Save"  >Sauvegarder la piece</button>
+               </div>
+            </fieldset>
         </form>
 
- ?>
 
 
+<?php
+var_dump($_SESSION['theatre']);
+
+var_dump($info->getIdP());
+?>  

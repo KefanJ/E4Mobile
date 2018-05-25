@@ -21,9 +21,7 @@
                 <label for='codePT'>Code postal : </label>
                 <?php echo $info->getCodePT(); ?>
             </div>
-             
-            <?php $_SESSION['theatre']=$info->getIdT();?>     
-             
+          
              
 
              <a class="modPrescL" data-rel="dialog" data-transition="pop"  href="index.php?action=detailsT&idT=

@@ -14,7 +14,7 @@
                 </div>
 
                 <div class='ui-field-contain'>
-                    <label for='realisateurP'>réalisateurP</label>
+                    <label for='realisateurP'>Metteur en scène</label>
                     <input type='text' name='realisateurP' maxlength='200' id='realisateurP' value='' />
                 </div>
              

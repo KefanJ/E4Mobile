@@ -240,7 +240,7 @@ class Passerelle {
 
             return $theatrePieces;
         } else {
-            echo '<script>alert("aucun comédien");</script>';
+            echo '<script>alert("aucune pièces");</script>';
         }
     }
 

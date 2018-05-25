@@ -11,7 +11,8 @@ require('vue/header.php');
 ?>
 <div data-role="page">
     <div data-role="header" data-theme="e">
-        <h1>Sunny Art</h1>
+        <h1 style="color: blue;">Sunny Art</h1>
+        
          <a href="http://localhost/E4Mobile/public_html/index.php" data-theme="b" data-icon="home" data-ajax='false'>Home</a>
     </div>
     <div data-role="content">
@@ -133,7 +134,6 @@ require('vue/header.php');
                                     $idP = $_REQUEST['idP'];
                                     $contact = Passerelle::getOnePiece($idP);
                                     Passerelle::addTheatrePiece($idThe,$idPiece);
-                                    
                                     require ('vue/showTheatrePiece.php');
                                     break;                    
                                 
